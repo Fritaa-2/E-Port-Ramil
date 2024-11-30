@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive School Events</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Basic Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .container {
+      padding: 2rem;
+    }
+    {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+    /* Carousel */
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .carousel img {
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 5;
+    }
+    .carousel-btn.left {
+      left: 10px;
+    }
+    .carousel-btn.right {
+      right: 10px;
+    }
+
+    /* Countdown */
+    .countdown {
+      margin: 2rem 0;
+      text-align: center;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .countdown h2 {
+      color: #6a11cb;
+    }
+
+    /* Events */
+    .event {
+      background: white;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .event:hover {
+      transform: translateY(-10px);
+    }
+    .event img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .event .event-info {
+      padding: 1rem;
+    }
+    .event-title {
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+      color: #6a11cb;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+         <audio id="backgroundMusic" loop>
+    <source src="bgmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+    
+        <h1>Welcome to Our School Events</h1>
+    <p>Explore upcoming activities and join the fun!</p>
+        <nav>
+            <a href="2ndport.html">Home</a>
+            <a href="lesson1.html">Lessons</a>
+            <a href="events1.html">Events/Activities</a>
+            <a href="reflection1.html">Reflections</a>
+        </nav>
+    
+    
+    
+  </header>
+  <div class="container">
+    <!-- Carousel -->
+    <div class="carousel" id="carousel">
+      <button class="carousel-btn left" onclick="prevSlide()">&#8249;</button>
+    
+      <img src="teachersday.jpeg" alt="Event 1">
+      <img src="intrams.jpg" alt="Event 2">
+     <img src="booklandia1.jpeg" alt="Event 3">
+  
+ 
+<button class="carousel-btn right" onclick="nextSlide()">&#8250;</button>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown">
+      <h2>Next Event: VPOP</h2>
+      <p id="countdown-timer">Loading...</p>
+    </div>
+
+    <!-- Events -->
+    <div class="event" onclick="showModal('Booklandia', 'Imagination is the only limit!')">
+      <video height="250px" width
+      ="300px"controls>
+  <source src="booklandia2.mp4" type="video/mp4">
+  <source src="booklandia2.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+      <div class="event-info">
+        <h2 class="event-title">Booklandia</h2>
+        <p>English Month<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+    </div>
+    
+    <div class="event" onclick="showModal('Persona Articulata', 'The battle of wits!')">
+      <img src="pa.jpeg" alt="Sports Day">
+      <div class="event-info">
+        <h2 class="event-title">Persona Articulata</h2>
+        <p>English Month<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+      </div>
+    
+    <div class="event" onclick="showModal('Intramurals', 'Join us for a day of thrilling sports action!')">
+      <img src="intrams.jpg" alt="Sports Day">
+      <div class="event-info">
+        <h2 class="event-title">Intrams</h2>
+        <p>Mapeh Month<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+      </div>
+      
+      <div>
+         
+      <div class="event" onclick="showModal('Teachers Day', 'Thank you teachers!')">
+      <img src="teachersday.jpeg" alt="td">
+      <div class="event-info">
+        <h2 class="event-title">Teachers Day</h2>
+        <p>The food is good.<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+      </div>
+      
+      <div class="event" onclick="showModal('English Poster', 'I should be an artist!')">
+      <img src="englishposter.jpg" alt="td">
+      <div class="event-info">
+        <h2 class="event-title">English Poster/Slogan</h2>
+        <p>I am Pablo Picasso.<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+     </div>
+      
+       <div class="event" onclick="showModal('Dance', 'Not me!!')">
+      <video height="250px" width
+      ="300px"controls>
+  <source src="dance.mp4" type="video/mp4">
+  <source src="dance.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+      <div class="event-info">
+        <h2 class="event-title">Dance for Science Pageant</h2>
+        <p>This is A.I Generated.<i>(Click The Picture for Hidden Message)</i></p>
+      </div>
+      
+      
+      
+      
+      
+    </div>
+  </div>
+
+  
+  
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button onclick="closeModal()">&#10005;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    // Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - index) * 100}%)`;
+      });
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+      showSlide(currentSlide);
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+      showSlide(currentSlide);
+    }
+    showSlide(currentSlide);
+
+    // Countdown
+    const countdownDate = new Date("December 11, 2024 09:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown-timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Modal
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    function showModal(title, description) {
+      modal.style.display = 'flex';
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+     // Function to play background music
+    document.addEventListener('DOMContentLoaded', function () {
+      const music = document.getElementById('backgroundMusic');
+
+      // Attempt to play music automatically
+      music.play().catch(error => {
+        console.error("Autoplay failed. Waiting for user interaction.", error);
+
+        // Add a fallback user interaction
+        document.addEventListener('click', () => {
+          music.play();
+          console.log("Background music started after user interaction.");
+        }, { once: true });
+      });
+    });
+  </script>
+</body>
+</html>

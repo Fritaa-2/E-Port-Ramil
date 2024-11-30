@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Reflection</title>
+  <link rel="stylesheet" href="styles1.css">
+  <style>
+      nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+audio {
+      display: none;
+    }
+</style>
+</head>
+<body>
+  <header>
+      <h1>Welcome to My E-Portfolio</h1>
+        <nav>
+            <a href="2ndport.html">Home</a>
+            <a href="lesson1.html">Lessons</a>
+            <a href="events1.html">Events/Activities</a>
+            <a href="reflection1.html">Reflections</a>
+        </nav>
+       
+        <audio id="backgroundMusic" loop>
+    <source src="bgmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+        
+    <h1>My Reflection</h1>
+    <p>Welcome to my reflection page!</p>
+  </header>
+
+  <main>
+    <section id="reflection">
+      <h2>Reflection</h2>
+      <p id="reflection-text">Click the button below to reveal my reflection.</p>
+      <button id="reveal-button">Reveal Reflection</button>
+    </section>
+
+    <section id="feedback">
+      <h2>Feedback</h2>
+      <p>What do you think of my reflection? Share your thoughts:</p>
+      <textarea id="feedback-input" placeholder="Type your feedback here..."></textarea>
+      <button id="submit-feedback">Submit Feedback</button>
+      <p id="thank-you-message" class="hidden">Thank you for your feedback!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️</p>
+  </footer>
+
+  <script src="script1.js"></script>
+</body>
+</html>

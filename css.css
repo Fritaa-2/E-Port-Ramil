@@ -1,0 +1,47 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+  background-color: #68BDCA;
+}
+
+/* BACK TO TOP BUTTON*/
+
+#btt {
+  position: fixed;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  width: 50px;
+  transition: margin-bottom 0.6s, opacity 0.6s;
+}
+
+#btt:hover {
+  margin-bottom: 25px;
+  opacity: 1;
+  transition: margin-bottom 0.6s, opacity 0.6s;
+}
+
+
+/* WELCOME */
+
+#welcome {
+  font-family: 'Amatic SC', cursive;
+  color: #FCFFFF;
+  background: url("https://images.unsplash.com/photo-1423589989400-cc0270157ed0?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=458cf2662814c68b6eb24d9e55801fa0");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  padding: 5% 5% 5% 5%;
+}
+
+#welcome h1,
+#portfolio h1 {
+  font-size: 70pt;
+  font-weight: bold;
+}
+
+#welcome h3,
+#portfolio h3 {

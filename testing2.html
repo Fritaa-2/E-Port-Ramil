@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lessons with Images</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #6dd5fa, #ffffff);
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .lesson {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .lesson:hover {
+            background-color: #6dd5fa;
+            color: white;
+            transform: scale(1.03);
+        }
+        .lesson h2 {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .lesson-content {
+            margin-top: 10px;
+            display: none;
+            animation: slideDown 0.5s ease;
+        }
+        .lesson-content img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .toggle-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        .lesson.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .lesson.open .lesson-content {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lessons 1-8</h1>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 1 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+1" alt="Lesson 1">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 2 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+2" alt="Lesson 2">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 3 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+3" alt="Lesson 3">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 4 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+4" alt="Lesson 4">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 5 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+5" alt="Lesson 5">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 6 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+6" alt="Lesson 6">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 7 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+7" alt="Lesson 7">
+            </div>
+        </div>
+        <div class="lesson" onclick="toggleLesson(this)">
+            <h2>Lesson 8 <span class="toggle-icon">▼</span></h2>
+            <div class="lesson-content">
+                <img src="https://via.placeholder.com/800x300?text=Lesson+8" alt="Lesson 8">
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleLesson(element) {
+            element.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

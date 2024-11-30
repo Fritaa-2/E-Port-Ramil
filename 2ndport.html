@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+   
+    <header>
+        <h1>Welcome to My E-Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lesson1.html">Lessons</a>
+            <a href="events1.html">Events/Activities</a>
+            <a href="reflection1.html">Reflections</a>
+        </nav>
+    </header>
+    
+    <audio id="backgroundMusic" loop>
+    <source src="bgmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p><i>(Click Anywhere for  Background Music )</i> My name is Ralph Moniel F. Ramil and I am currently 14 years old and 
+ studying in Las Pinas National High School. My favorite hobbies are playing
+ games, drawing and sometimes studying.My favorite subject are ICT and Science.
+ In my whole life I met some and friends that can I can trust with my whole life.
+ So far this school year is doing me good and I am having fun </p>
+ 
+ <p align="center"><img href="#"src="me.jpeg" alt="me" height="250px"width="250px"></p>
+        </section>
+    </main>
+    
+       
+       
+    
+<button onclick="triggerJumpscare()">Don't Click!!</button>
+    <img id="jumpscareImage" src="jumpscare.jpg" alt="Jumpscare Image">
+
+ 
+
+</body>
+</html>
+
+    <script>
+         // Function to play background music
+    document.addEventListener('DOMContentLoaded', function () {
+      const music = document.getElementById('backgroundMusic');
+
+      // Attempt to play music automatically
+      music.play().catch(error => {
+        console.error("Autoplay failed. Waiting for user interaction.", error);
+
+        // Add a fallback user interaction
+        document.addEventListener('click', () => {
+          music.play();
+          console.log("Background music started after user interaction.");
+        }, { once: true });
+      
+    
+      
+        function triggerJumpscare() {
+            const jumpscareImage = document.getElementById("jumpscareImage");
+            jumpscareImage.style.display = "block";
+
+
+            // Play a sound (Optional)
+            const audio = new Audio('jumpscaresound.mp3');
+            audio.play();
+
+            // Hide the jumpscare after 2 seconds
+            setTimeout(function() {
+                jumpscareImage.style.display = "none";
+            }, 2000); // Image disappears after 2 seconds
+        }
+         });
+});
+   
+    </script>
+  
+    
+</body>
+</html>
